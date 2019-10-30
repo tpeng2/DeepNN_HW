@@ -1,10 +1,32 @@
 # CNN for MNIST (based from the original submission to ACMS 80770 on 12/15/2018)
+## Environment:
+* PyTorch 1.0 (w/ torchvision)
+* Cuda 9.2
 ## Network structure:
 * Input➔Convolutional layer 1 ➔Batch Norm➔ReLu➔MaxPool
 * ➔Convolutional layer 2➔Batch Norm➔ReLu
 * ➔Fully connected layer➔ReLu
 * ➔dropout➔softmax➔output
-# Hyper parameters:
+```
+# Convolutional neural network (two convolutional layers) class ConvNet(nn.Module):
+def __init__(self, num_classes=10): super(ConvNet, self).__init__() self.layer1 = nn.Sequential(
+nn.Conv2d(1, 12, kernel_size=5, stride=1, padding=0), nn.BatchNorm2d(12),
+nn.ReLU(),
+nn.MaxPool2d(kernel_size=2, stride=2))
+self.layer2 = nn.Sequential(
+nn.Conv2d(12, 16, kernel_size=5, stride=1, padding=0), nn.BatchNorm2d(16),
+nn.ReLU(),
+nn.MaxPool2d(kernel_size=2, stride=2))
+self.fc = nn.Linear(4*4*16, num_classes)
+def forward(self, x):
+out = self.layer1(x)
+out = self.layer2(out)
+out = out.reshape(out.size(0), -1)
+out = self.fc(out)
+out = F.dropout(out, training=self.training) out = F.log_softmax(out,dim=1)
+return out
+```
+## Hyper parameters:
 * Optimizer: Adadelta
 * Learning rate: 3
 * Lowest error on test set: 0.80% (accuracy=99.20%) 
