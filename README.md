@@ -1,4 +1,4 @@
-# CNN for MNIST
+# CNN for MNIST (transcripted from the original document on 12/15/2018)
 ## Network structure:
 * Input➔Convolutional layer 1 ➔Batch Norm➔ReLu➔MaxPool
 * ➔Convolutional layer 2➔Batch Norm➔ReLu➔
@@ -20,11 +20,11 @@ Num of classes of labels: 10
 Batch size: 60
 
 ## Notes
-I selected convolutional layer as it can avoid issues like miss-centered number because fully connected layer maps all pixels while a convolutional layer doesn’t have to. 
-I tried three kernel sizes (3, 4, 5), and it seems larger kernel size gives better accuracy, while it also introduces more parameters. 
-I increased the channel number for each convolutional layer and reduce one fully connected layer from the example to match the requirements of parameter size. I also add a batch normalization to scale the activations. 
-For the optimizer, I tried Adam, SGD, Adagrad, and Adadelta, with different learning rate. It seems different optimizer has their own best learning rate, and for Adadelta, learning rate is set at 3, although it seems Adadelta has its own process to adjust/adapt the real learning rate.
-I used CUDA as the device to train the NN (so code was modified because of some hardware warning from the example code), with epoch=10 and batch size =100. The highest accuracy is 99.20%.
+1. I selected convolutional layer as it can avoid issues like miss-centered number because fully connected layer maps all pixels while a convolutional layer doesn’t have to. 
+1. I tried three kernel sizes (3, 4, 5), and it seems larger kernel size gives better accuracy, while it also introduces more parameters. 
+1. I increased the channel number for each convolutional layer and reduce one fully connected layer from the example to match the requirements of parameter size. I also add a batch normalization to scale the activations. 
+1. For the optimizer, I tried Adam, SGD, Adagrad, and Adadelta, with different learning rate. It seems different optimizer has their own best learning rate, and for Adadelta, learning rate is set at 3, although it seems Adadelta has its own process to adjust/adapt the real learning rate.
+1. I used CUDA as the device to train the NN (so code was modified because of some hardware warning from the example code), with epoch=10 and batch size =100. The highest accuracy is 99.20%.
 
 ## Weights for fully connected layer (16*16)
 ![Weights](images/weights.png)
