@@ -1,4 +1,4 @@
-# CNN for MNIST (transcripted from the original document on 12/15/2018)
+# CNN for MNIST (based from the original submission to ACMS 80770 on 12/15/2018)
 ## Network structure:
 * Input➔Convolutional layer 1 ➔Batch Norm➔ReLu➔MaxPool
 * ➔Convolutional layer 2➔Batch Norm➔ReLu
