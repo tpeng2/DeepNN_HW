@@ -36,7 +36,9 @@ Batch size: 60
 Percent of training images misclassified: 40.63166666666667 % Test Accuracy of the model on the 10000 test images: 99.2 % 
 Percent of testing images misclassified: 0.7999999999999972 %
 # run 2
-Percent of training images misclassified: 40.401666666666664 % Test Accuracy of the model on the 10000 test images: 99.16 % Percent of testing images misclassified: 0.8400000000000034 %
+Percent of training images misclassified: 40.401666666666664 % Test Accuracy of the model on the 10000 test images: 99.16 % 
+Percent of testing images misclassified: 0.8400000000000034 %
 # run 3
-Percent of training images misclassified: 40.721666666666664 % Test Accuracy of the model on the 10000 test images: 99.14 % Percent of testing images misclassified: 0.8599999999999994 %
+Percent of training images misclassified: 40.721666666666664 % Test Accuracy of the model on the 10000 test images: 99.14 % 
+Percent of testing images misclassified: 0.8599999999999994 %
 ```
