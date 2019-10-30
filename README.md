@@ -1,8 +1,8 @@
 # CNN for MNIST (transcripted from the original document on 12/15/2018)
 ## Network structure:
 * Input➔Convolutional layer 1 ➔Batch Norm➔ReLu➔MaxPool
-* ➔Convolutional layer 2➔Batch Norm➔ReLu➔
-* Fully connected layer➔ReLu
+* ➔Convolutional layer 2➔Batch Norm➔ReLu
+* ➔Fully connected layer➔ReLu
 * ➔dropout➔softmax➔output
 # Hyper parameters:
 * Optimizer: Adadelta
